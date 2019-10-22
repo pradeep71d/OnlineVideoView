@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Uri uri=Uri.parse(url);
         videoView.setVideoURI(uri);
         videoView.start();
+        MediaController midiacontrtoler = new MediaController(this);
+        midiacontrtoler.setAnchorView(videoView);
+        videoView.setMediaController( midiacontrtoler);
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
